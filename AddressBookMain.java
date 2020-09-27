@@ -93,21 +93,25 @@ public class AddressBookMain {
 		
 		list.add(new AddressBookContent("Aakash","Gandhi","Model Town","Panipat",132103,"8708155286","aakash.g@gmail.com" ));
 		
-		System.out.println("Enter \n 1 to Add Contact \n 2 to Edit Contact \n 3 to Delete Contact ");
-		int choice =sc.nextInt();
-		switch(choice) {
-			case 1:
-				add();
+		while(true) {
+			System.out.println("Enter \n 0 to Exit \n 1 to Add Contact \n 2 to Edit Contact \n 3 to Delete Contact ");
+			int choice =sc.nextInt();
+			if(choice == 0)
 				break;
-			case 2:
-				edit();
-				break;
-			case 3:
-				delete();
-				break;
-			default:
-				
+			
+			switch(choice){
+				case 1:
+					add();
+					break;
+				case 2:
+					edit();
+					break;
+				case 3:
+					delete();
+					break;
+				default:
+					
+			}
 		}
-		
 	}
 }
