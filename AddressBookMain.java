@@ -70,6 +70,20 @@ public class AddressBookMain {
 
 	}
 	
+	public static void delete(){
+		System.out.println("Enter the first name of the entry to delete.");
+		
+		String first = sc.next();
+		sc.nextLine();
+		
+		int pos = -1 ;
+		for(int i=0 ; i<list.size() ; i++){
+			if(list.get(i).getFirstName().equals(first))
+				pos = i ; 
+		}
+		list.remove(pos);
+		System.out.println("Deletion succesfully");
+	}
 	
 	public static void main(String []args) {
 	
@@ -79,7 +93,7 @@ public class AddressBookMain {
 		
 		list.add(new AddressBookContent("Aakash","Gandhi","Model Town","Panipat",132103,"8708155286","aakash.g@gmail.com" ));
 		
-		System.out.println("Enter 1 to Add Contact or 2 to Edit Contact");
+		System.out.println("Enter \n 1 to Add Contact \n 2 to Edit Contact \n 3 to Delete Contact ");
 		int choice =sc.nextInt();
 		switch(choice) {
 			case 1:
@@ -87,6 +101,9 @@ public class AddressBookMain {
 				break;
 			case 2:
 				edit();
+				break;
+			case 3:
+				delete();
 				break;
 			default:
 				
